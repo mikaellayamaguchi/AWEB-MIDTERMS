@@ -1,68 +1,55 @@
-<div>
-   Today's date :- {{presentDate}}
-</div>
+<div class="pipes-container">
 
-<div>
-   Today's date :- {{presentDate | date }}
-</div>
+  <div class="pipe-block date-block">
+    <h3>Today's Date</h3>
+    <p>{{ presentDate }}</p>
+    <p>{{ presentDate | date }}</p>
+  </div>
 
-<div>
-  This is a short date: {{ presentDate | date:'shortDate' }} <br/>
-  This line shows the full date: {{ presentDate | date:'fullDate' }} <br/>
-  This will show a formatted date: {{ presentDate | date:'M/dd/yyyy' }} <br/>
-  This indicates the hours and minutes: {{ presentDate | date:'h:mm' }} <br/>
-  Mikaella Yamaguchi
-</div>
+  <div class="pipe-block date-block">
+    <h3>Formatted Dates</h3>
+    <p>Short: {{ presentDate | date:'shortDate' }}</p>
+    <p>Full: {{ presentDate | date:'fullDate' }}</p>
+    <p>Custom: {{ presentDate | date:'M/dd/yyyy' }}</p>
+    <p>Time: {{ presentDate | date:'h:mm a' }}</p>
+  </div>
 
-<div>
-  Date with uppercase :- {{presentDate | date:'fullDate' | uppercase }} <br/>
-  Date with lowercase :- {{presentDate | date:'medium' | lowercase }} <br/>
-</div>
+  <div class="pipe-block numeric-block currency-pipe">
+    <h3>Currency Pipe</h3>
+    <p>{{ price | currency:'':true }}</p>
+    <p>{{ price | currency:'INR' }}</p>
+  </div>
 
-<h3>Currency Pipe</h3>
-<p>{{price | currency:'':true }}</p>
-<p>{{price | currency:'INR' }}</p>
+  <div class="pipe-block numeric-block decimal-pipe">
+    <h3>Decimal Pipe</h3>
+    <p>{{ decimalNum1 | number }}</p>
+    <p>{{ decimalNum2 | number }}</p>
+  </div>
 
-<div>
-  <h3>Start index:- {{Fruits | slice:2}}</h3>
-  <h4>Start and end index:- {{Fruits | slice:1:4}}</h4>
-  <h5>Negative index:- {{Fruits | slice:-2}}</h5>
-  <h6>Negative start and end index:- {{Fruits | slice:-4:-2}}</h6>
-</div>
+  <div class="pipe-block numeric-block percent-pipe">
+    <h3>Percent Pipe</h3>
+    <p>{{ decimalNum1 | percent }}</p>
+    <p>{{ decimalNum2 | percent:'1.2-2' }}</p>
+  </div>
 
-<div style="text-align:center">
-  <h3>Decimal Pipe</h3>
-  <p>{{decimalNum1 | number}}</p>
-  <p>{{decimalNum2 | number}}</p>
-</div>
+  <div class="pipe-block numeric-block async-pipe">
+    <h3>Live Time</h3>
+    <p>{{ time$ | async | date:'mediumTime' }}</p>
+  </div>
 
-<div style="text-align:center">
-  <h3>Decimal Pipe</h3>
-  <p>{{decimalNum1 | number:'3.1'}}</p>
-  <p>{{decimalNum2 | number:'2.1-4'}}</p>
-</div>
+  <div class="pipe-block titlecase-block">
+    <h3>TitleCase Pipe</h3>
+    <p>Original: {{ sampleText }}</p>
+    <p>TitleCased: {{ sampleText | titlecase }}</p>
+  </div>
 
-<div>
-  Seconds changing in Time: {{ time$ | async | date:'mediumTime' }}
-</div>
+  <div class="pipe-block keyvalue-block">
+    <h3>KeyValue Pipe</h3>
+    <ul>
+      <li *ngFor="let item of fruitObj | keyvalue">
+        {{ item.key }} : {{ item.value }}
+      </li>
+    </ul>
+  </div>
 
-<div>
-  <h3>Percent Pipe</h3>
-  <p>DecimalNum1 as percent: {{ decimalNum1 | percent }}</p>
-  <p>DecimalNum2 as percent: {{ decimalNum2 | percent:'1.2-2' }}</p>
-</div>
-
-<div>
-  <h3>KeyValue Pipe</h3>
-  <ul>
-    <li *ngFor="let item of fruitObj | keyvalue">
-      {{ item.key }} : {{ item.value }}
-    </li>
-  </ul>
-</div>
-
-<div>
-  <h3>TitleCase Pipe</h3>
-  <p>Original text: {{ sampleText }}</p>
-  <p>TitleCased text: {{ sampleText | titlecase }}</p>
 </div>

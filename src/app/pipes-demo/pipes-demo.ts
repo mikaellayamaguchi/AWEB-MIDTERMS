@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AsyncPipe, CurrencyPipe, DatePipe, DecimalPipe, LowerCasePipe, SlicePipe, UpperCasePipe, PercentPipe, KeyValuePipe, TitleCasePipe } from '@angular/common';
+import { AsyncPipe, CurrencyPipe, DatePipe, DecimalPipe, LowerCasePipe, SlicePipe, UpperCasePipe, PercentPipe, KeyValuePipe, TitleCasePipe, CommonModule } from '@angular/common';
 import { interval } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -15,7 +15,7 @@ import { map } from 'rxjs/operators';
     DecimalPipe,
     AsyncPipe,
     PercentPipe,
-    KeyValuePipe,
+    CommonModule,
     TitleCasePipe
   ],
   templateUrl: './pipes-demo.html',
@@ -25,7 +25,7 @@ export class PipesDemo {
   presentDate = new Date();
   price: number = 20000;
 
-  Fruits = ["Apple", "Orange", "Grapes", "Mango", "Kiwi", "Pomegranate"];
+  Fruits = [" Apple", " Orange", " Grapes", " Mango", " Kiwi", " Pomegranate"];
 
   decimalNum1: number = 8.7589623;
   decimalNum2: number = 5.43;
