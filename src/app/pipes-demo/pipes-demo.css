@@ -110,7 +110,7 @@ body {
 
 /* --- TitleCase pipe --- */
 .titlecase-block {
-  background: linear-gradient(135deg, #fff5e6, #ffe6cc);
+  background: #0072ff30;
   border-radius: 18px;
   padding: 25px;
   text-align: center;

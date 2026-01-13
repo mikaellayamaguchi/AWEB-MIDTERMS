@@ -14,29 +14,6 @@
     <p>Time: {{ presentDate | date:'h:mm a' }}</p>
   </div>
 
-  <div class="pipe-block numeric-block currency-pipe">
-    <h3>Currency Pipe</h3>
-    <p>{{ price | currency:'':true }}</p>
-    <p>{{ price | currency:'INR' }}</p>
-  </div>
-
-  <div class="pipe-block numeric-block decimal-pipe">
-    <h3>Decimal Pipe</h3>
-    <p>{{ decimalNum1 | number }}</p>
-    <p>{{ decimalNum2 | number }}</p>
-  </div>
-
-  <div class="pipe-block numeric-block percent-pipe">
-    <h3>Percent Pipe</h3>
-    <p>{{ decimalNum1 | percent }}</p>
-    <p>{{ decimalNum2 | percent:'1.2-2' }}</p>
-  </div>
-
-  <div class="pipe-block numeric-block async-pipe">
-    <h3>Live Time</h3>
-    <p>{{ time$ | async | date:'mediumTime' }}</p>
-  </div>
-
   <div class="pipe-block titlecase-block">
     <h3>TitleCase Pipe</h3>
     <p>Original: {{ sampleText }}</p>
@@ -50,6 +27,35 @@
         {{ item.key }} : {{ item.value }}
       </li>
     </ul>
+  </div>
+
+  <div class="pipe-block numeric-block currency-pipe">
+    <h3>Currency Pipe</h3>
+    <p>{{ price | currency:'':true }}</p>
+    <p>{{ price | currency:'INR' }}</p>
+  </div>
+
+  <div class="pipe-block numeric-block decimal-pipe">
+    <h3>Decimal Pipe</h3>
+    <p>{{ decimalNum1 | number }}</p>
+    <p>{{ decimalNum2 | number }}</p>
+  </div>
+
+   <div class="pipe-block numeric-block decimal-pipe">
+    <h3>Modified Decimal Pipe</h3>
+    <p>{{ decimalNum1 | number:'3.1' }}</p>
+    <p>{{ decimalNum2 | number:'2.1-4' }}</p>
+  </div>
+
+  <div class="pipe-block numeric-block percent-pipe">
+    <h3>Percent Pipe</h3>
+    <p>{{ decimalNum1 | percent }}</p>
+    <p>{{ decimalNum2 | percent:'1.2-2' }}</p>
+  </div>
+
+  <div class="pipe-block numeric-block async-pipe">
+    <h3>Live Time</h3>
+    <p>{{ time$ | async | date:'mediumTime' }}</p>
   </div>
 
 </div>
