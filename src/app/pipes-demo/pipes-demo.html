@@ -1,1 +1,68 @@
-<p>pipes-demo works!</p>
+<div>
+   Today's date :- {{presentDate}}
+</div>
+
+<div>
+   Today's date :- {{presentDate | date }}
+</div>
+
+<div>
+  This is a short date: {{ presentDate | date:'shortDate' }} <br/>
+  This line shows the full date: {{ presentDate | date:'fullDate' }} <br/>
+  This will show a formatted date: {{ presentDate | date:'M/dd/yyyy' }} <br/>
+  This indicates the hours and minutes: {{ presentDate | date:'h:mm' }} <br/>
+  Mikaella Yamaguchi
+</div>
+
+<div>
+  Date with uppercase :- {{presentDate | date:'fullDate' | uppercase }} <br/>
+  Date with lowercase :- {{presentDate | date:'medium' | lowercase }} <br/>
+</div>
+
+<h3>Currency Pipe</h3>
+<p>{{price | currency:'':true }}</p>
+<p>{{price | currency:'INR' }}</p>
+
+<div>
+  <h3>Start index:- {{Fruits | slice:2}}</h3>
+  <h4>Start and end index:- {{Fruits | slice:1:4}}</h4>
+  <h5>Negative index:- {{Fruits | slice:-2}}</h5>
+  <h6>Negative start and end index:- {{Fruits | slice:-4:-2}}</h6>
+</div>
+
+<div style="text-align:center">
+  <h3>Decimal Pipe</h3>
+  <p>{{decimalNum1 | number}}</p>
+  <p>{{decimalNum2 | number}}</p>
+</div>
+
+<div style="text-align:center">
+  <h3>Decimal Pipe</h3>
+  <p>{{decimalNum1 | number:'3.1'}}</p>
+  <p>{{decimalNum2 | number:'2.1-4'}}</p>
+</div>
+
+<div>
+  Seconds changing in Time: {{ time$ | async | date:'mediumTime' }}
+</div>
+
+<div>
+  <h3>Percent Pipe</h3>
+  <p>DecimalNum1 as percent: {{ decimalNum1 | percent }}</p>
+  <p>DecimalNum2 as percent: {{ decimalNum2 | percent:'1.2-2' }}</p>
+</div>
+
+<div>
+  <h3>KeyValue Pipe</h3>
+  <ul>
+    <li *ngFor="let item of fruitObj | keyvalue">
+      {{ item.key }} : {{ item.value }}
+    </li>
+  </ul>
+</div>
+
+<div>
+  <h3>TitleCase Pipe</h3>
+  <p>Original text: {{ sampleText }}</p>
+  <p>TitleCased text: {{ sampleText | titlecase }}</p>
+</div>
